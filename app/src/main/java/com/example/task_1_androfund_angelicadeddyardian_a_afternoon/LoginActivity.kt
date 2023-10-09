@@ -34,21 +34,22 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
 
         val btnLogin: Button = findViewById(R.id.btn_login)
         btnLogin.setOnClickListener(this)
-//        val btnRegis: TextView = findViewById(R.id.tv_register)
-//        btnRegis.setOnClickListener(this)
+        val btnRegis: TextView = findViewById(R.id.tv_register)
+        btnRegis.setOnClickListener(this)
  }
 
     override fun onClick(v: View) {
         when (v.id){
             R.id.btn_login->{
                 val intent = Intent(this@LoginActivity, HomeActivity::class.java)
-            startActivity(intent)
+
+                startActivity(intent)
             }
-//                R.id.tv_register->{
-//                    val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
-////                   intent.putExtra("User", User(etUsername.text.toString(),etPassword.text.toString()))
-//                    startActivity(intent)
-//                }
+                R.id.tv_register->{
+                    val intent = Intent(this@LoginActivity, RegisterActivity::class.java)
+                    intent.putExtra("User", User(etEmail.text.toString(),etPassword.text.toString()))
+                    startActivity(intent)
+                }
         }
 
     }
